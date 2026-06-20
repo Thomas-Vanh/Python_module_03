@@ -35,7 +35,7 @@ def gen_player_achievements() -> set:
 
 if __name__ == "__main__":
     print("=== Achievement Tracker System ===\n")
-    
+
     player_1: set = gen_player_achievements()
     player_2: set = gen_player_achievements()
     player_3: set = gen_player_achievements()
@@ -44,14 +44,14 @@ if __name__ == "__main__":
     print(f"Player Bob: {player_2}")
     print(f"Player Charlie: {player_3}")
     print(f"Player Dylan: {player_4}\n")
-    
+
     player_union: set = set.union(player_1, player_2, player_3, player_4)
     print(f"All distinct achievements: {player_union}\n")
 
     player_inter: set = set.intersection(player_1, player_2, player_3,
                                          player_4)
     print(f"Common achievements: {player_inter}\n")
-    
+
     print(f"Only Alice has: {player_1.difference(player_2, player_3,
                                                  player_4)}")
     print(f"Only Bob has: {player_2.difference(player_1, player_3, player_4)}")
