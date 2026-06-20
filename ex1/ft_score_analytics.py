@@ -16,8 +16,8 @@ def main() -> None:
         valid_count: int = 0
     while i < lst_len:
         try:
-                lst_int[valid_count] = int(lst[i])
-                valid_count += 1
+            lst_int[valid_count] = int(lst[i])
+            valid_count += 1
         except ValueError:
             print(f"Invalid parameter: {lst[i]}")
         i += 1
@@ -32,6 +32,7 @@ def main() -> None:
         print(f"High score: {max(lst_final)}")
         print(f"Low score: {min(lst_final)}")
         print(f"Score range: {max(lst_final)-min(lst_final)}")
+
 
 if __name__ == "__main__":
     main()
