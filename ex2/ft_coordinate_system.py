@@ -5,7 +5,12 @@ import math
 
 def get_player_pos() -> tuple[float, float, float]:
     while True:
-        npos: str = input("Enter new coordinates as floats in format 'x,y,z':")
+        try:
+            npos: str = input("Enter new coordinates "
+                              "as floats in format 'x,y,z':")
+        except EOFError:
+            print("\nExiting coordinate input.")
+            exit(0)
         pos: list[str] = npos.split(",")
         if len(pos) != 3:
             print("Invalid Syntax")

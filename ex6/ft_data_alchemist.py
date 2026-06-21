@@ -15,9 +15,12 @@ def main() -> None:
     dict_plyr: dict[str, int] = {plyr: random.randint(0, 1000)
                                  for plyr in plyr_acapt}
     print(f"Score dict: {dict_plyr}")
-    average: float = sum(dict_plyr.values()) / len(dict_plyr)
+    if len(dict_plyr) == 0:
+        average: float = 0.0
+    else:
+        average = sum(dict_plyr.values()) / len(dict_plyr)
     print(f"Score average: {round(average, 2)}")
-    high_score: dict[str, int] = {name: score for name, score 
+    high_score: dict[str, int] = {name: score for name, score
                                   in dict_plyr.items() if score > average}
     print(f"High scores: {high_score}")
 

@@ -18,10 +18,14 @@ def gen_event() -> typing.Generator[tuple[str, str], None, None]:
         yield (name, action)
 
 
-def consume_event(lst: list) -> typing.Generator[str, None, None]:
-    while True:
+def consume_event(lst: list[tuple[str, str]]) -> typing.Generator[
+                                                                  tuple[str,
+                                                                        str],
+                                                                  None,
+                                                                  None]:
+    while len(lst) > 0:
         len_lst: int = len(lst) - 1
-        gevent: str = lst.pop(random.randint(0, len_lst))
+        gevent: tuple[str, str] = lst.pop(random.randint(0, len_lst))
         print(f"Got event from list: {gevent}")
         yield gevent
 
