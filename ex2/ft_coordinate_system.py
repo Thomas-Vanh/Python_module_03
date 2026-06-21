@@ -31,7 +31,7 @@ def get_player_pos() -> tuple[float, float, float]:
                 try:
                     float(clean)
                 except ValueError:
-                    print(f"Error on parameter '{clean}': could not convert"
+                    print(f"Error on parameter '{clean}': could not convert "
                           f"string to float: '{clean}'")
                     break
 
