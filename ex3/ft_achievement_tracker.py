@@ -3,7 +3,7 @@
 import random
 
 
-def gen_player_achievements() -> set:
+def gen_player_achievements() -> set[str]:
     achievements: list[str] = [
                                 "First Steps",
                                 "Welcome to the World",
@@ -26,7 +26,7 @@ def gen_player_achievements() -> set:
                                 "Omnipotent",
                                 "Total Accomplishment"]
     i = 0
-    player_set: set = set()
+    player_set: set[str] = set()
     while i <= random.randint(5, 6):
         player_set.add(achievements[random.randrange(0, 19)])
         i += 1
@@ -36,29 +36,29 @@ def gen_player_achievements() -> set:
 if __name__ == "__main__":
     print("=== Achievement Tracker System ===\n")
 
-    player_1: set = gen_player_achievements()
-    player_2: set = gen_player_achievements()
-    player_3: set = gen_player_achievements()
-    player_4: set = gen_player_achievements()
+    player_1: set[str] = gen_player_achievements()
+    player_2: set[str] = gen_player_achievements()
+    player_3: set[str] = gen_player_achievements()
+    player_4: set[str] = gen_player_achievements()
     print(f"Player Alice: {player_1}")
     print(f"Player Bob: {player_2}")
     print(f"Player Charlie: {player_3}")
     print(f"Player Dylan: {player_4}\n")
 
-    player_union: set = set.union(player_1, player_2, player_3, player_4)
+    player_union: set[str] = set.union(player_1, player_2, player_3, player_4)
     print(f"All distinct achievements: {player_union}\n")
 
-    player_inter: set = set.intersection(player_1, player_2, player_3,
-                                         player_4)
+    player_inter: set[str] = set.intersection(player_1, player_2, player_3,
+                                              player_4)
     print(f"Common achievements: {player_inter}\n")
 
-    print(f"Only Alice has: {player_1.difference(player_2, player_3,
-                                                 player_4)}")
+    print(f"Only Alice has: "
+          f"{player_1.difference(player_2, player_3, player_4)}")
     print(f"Only Bob has: {player_2.difference(player_1, player_3, player_4)}")
-    print(f"Only Charlie has: {player_3.difference(player_1, player_2,
-                                                   player_4)}")
-    print(f"Only Dylan has: {player_4.difference(player_1, player_2,
-                                                 player_3)}\n")
+    print(f"Only Charlie has: "
+          f"{player_3.difference(player_1, player_2, player_4)}")
+    print(f"Only Dylan has: "
+          f"{player_4.difference(player_1, player_2, player_3)}\n")
 
     print(f"Alice is missing: {player_union.difference(player_1)}")
     print(f"Bob is missing: {player_union.difference(player_2)}")
