@@ -26,14 +26,13 @@ def consume_event(lst: list[tuple[str, str]]) -> typing.Generator[
     while len(lst) > 0:
         len_lst: int = len(lst) - 1
         gevent: tuple[str, str] = lst.pop(random.randint(0, len_lst))
-        print(f"Got event from list: {gevent}")
         yield gevent
 
 
 if __name__ == "__main__":
     gen = gen_event()
     i = 0
-    while i < 1000:
+    for i in range(1000):
         event = next(gen)
         print(f"Event {i}: Player {event[0]} did action {event[1]}")
         i += 1
@@ -44,7 +43,6 @@ if __name__ == "__main__":
         lst_event.append(next(gen))
     print(f"Built list of 10 events: {lst_event}")
 
-    consume = consume_event(lst_event)
-    for _ in range(len(lst_event)):
-        next(consume)
+    for event in consume_event(lst_event):
+        print(f"Got event from list: {event}")
         print(f"Remains in list: {lst_event}")

@@ -8,7 +8,7 @@ def main() -> None:
     print(f"Program name: {sys.argv[0]}")
     lst_len: int = len(sys.argv)
     if lst_len > 1:
-        print(f"Arguments received: {lst_len}")
+        print(f"Arguments received: {lst_len - 1}")
         i: int = 1
         while i < lst_len:
             print(f"Argument {i}: {sys.argv[i]}")

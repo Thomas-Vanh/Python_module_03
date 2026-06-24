@@ -51,9 +51,9 @@ def main() -> None:
             least_abund = item
     final_most: str = str(most_abund)
     final_least: str = str(least_abund)
-    print(f"Item most abundant: {final_most}"
+    print(f"Item most abundant: {final_most} "
           f"with quantity {invent[final_most]}")
-    print(f"Item least abundant: {final_least}"
+    print(f"Item least abundant: {final_least} "
           f"with quantity {invent[final_least]}")
 
     invent.update({"magic_item": 1})

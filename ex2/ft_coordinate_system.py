@@ -43,7 +43,7 @@ if __name__ == "__main__":
     pos1: tuple[float, float, float] = get_player_pos()
 
     print(f"Got a first tuple: {pos1}")
-    print(f"It includes: X={pos1[0]} Y={pos1[1]} Z={pos1[2]}")
+    print(f"It includes: X={pos1[0]}, Y={pos1[1]}, Z={pos1[2]}")
     dist_cent: float = math.sqrt(pos1[0]**2 + pos1[1]**2 + pos1[2]**2)
     print(f"Distance to center: {round(dist_cent, 4)}\n")
 

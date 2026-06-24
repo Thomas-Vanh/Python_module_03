@@ -25,12 +25,8 @@ def gen_player_achievements() -> set[str]:
                                 "Demiurge",
                                 "Omnipotent",
                                 "Total Accomplishment"]
-    i = 0
-    player_set: set[str] = set()
-    while i <= random.randint(5, 6):
-        player_set.add(achievements[random.randrange(0, 19)])
-        i += 1
-    return player_set
+    n: int = random.randint(11, 13)
+    return set(random.sample(achievements, n))
 
 
 if __name__ == "__main__":
